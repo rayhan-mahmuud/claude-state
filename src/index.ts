@@ -1,3 +1,4 @@
+import { index } from "./commands/index.js";
 import { init } from "./commands/init.js";
 import { sessionEnd } from "./commands/session-end.js";
 import { sessionStart } from "./commands/session-start.js";
@@ -14,6 +15,9 @@ export async function main(argv: string[]): Promise<void> {
   switch (cmd) {
     case "init":
       await init(rest);
+      return;
+    case "index":
+      await index(rest);
       return;
     case "session-start":
       await sessionStart(rest);
@@ -38,6 +42,7 @@ function printHelp(): void {
       "",
       "Commands:",
       "  init             Bootstrap .claude-state/ in the current project",
+      "  index            Index project files into .claude-state/ caches",
       "  session-start    SessionStart hook handler (reads stdin)",
       "  session-end      SessionEnd hook handler (reads stdin)",
       "  help             Show this message",

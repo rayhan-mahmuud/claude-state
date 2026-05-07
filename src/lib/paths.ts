@@ -6,6 +6,7 @@ export const CLAUDE_DIR = ".claude";
 
 export const STATE_FILES = {
   project: "project.json",
+  projectMap: "project-map.json",
   currentTask: "current-task.md",
   decisions: "decisions.md",
   sessionsLog: "sessions.log",

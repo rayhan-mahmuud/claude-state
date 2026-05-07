@@ -6,9 +6,21 @@ dist
 coverage
 
 
-STEPS.md
 .env
 .env.local
 .env.*.local
 .idea
 .vscode
+
+CLAUDE.md
+
+# Ignore additional files or directories as needed
+STEPS.md
+STEPS-DAY-1.md
+STEPS-DAY-2.md
+STEPS-DAY-3.md
+STEPS-DAY-4.md
+STEPS-DAY-5.md
+STEPS-DAY-6.md
+STEPS-DAY-7.md
+STEPS-DAY-8.md
