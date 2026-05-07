@@ -1,12 +1,31 @@
+import { init } from "./commands/init.js";
+import { sessionEnd } from "./commands/session-end.js";
+import { sessionStart } from "./commands/session-start.js";
+
 export async function main(argv: string[]): Promise<void> {
   const cmd = argv[2];
+  const rest = argv.slice(3);
+
   if (!cmd || cmd === "help" || cmd === "--help" || cmd === "-h") {
     printHelp();
     return;
   }
-  console.error(`claude-state: unknown command "${cmd}"`);
-  printHelp();
-  process.exit(2);
+
+  switch (cmd) {
+    case "init":
+      await init(rest);
+      return;
+    case "session-start":
+      await sessionStart(rest);
+      return;
+    case "session-end":
+      await sessionEnd(rest);
+      return;
+    default:
+      console.error(`claude-state: unknown command "${cmd}"`);
+      printHelp();
+      process.exit(2);
+  }
 }
 
 function printHelp(): void {
